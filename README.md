@@ -31,6 +31,7 @@ CREATE TABLE votes (
 ```
 
 ## Page Description
+- Database Connection (db.php)
 - Home Page (index.html)
 - Vote Processing Page (vote.php)
 - Results Page (results.php)
