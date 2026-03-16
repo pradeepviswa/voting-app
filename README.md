@@ -9,13 +9,57 @@
 
 ## Structure:
 ```
-/voting
- ├── index.html
- ├── vote.php
- ├── results.php
- ├── db.php
- └── style.css
+voting-app/
+├── Dockerfile
+├── index.php
+├── vote.php
+├── results.php
+└── db.php
 ```
+
+## Dockerfile
+```
+FROM php:8.2-apache
+RUN apt update -y
+RUN apt install git -y
+RUN git clone https://github.com/pradeepviswa/voting-app.git /var/www/html
+RUN ls /var/www/html
+RUN docker-php-ext-install mysqli
+#check mysqli
+RUN php -i | grep mysqli
+
+```
+## Build Docker Image
+```
+docker build -t voting-image .
+```
+
+## Create Docker Network
+```
+docker network create voting-network
+```
+
+## Start MySQL Container
+```
+docker run -d \
+--name voting-mysql \
+--network voting-network \
+-e MYSQL_ROOT_PASSWORD=root \
+-e MYSQL_DATABASE=voting_db \
+mysql:8
+```
+
+## Start Web Container
+```
+docker run -d \
+--name voting-web \
+--network voting-network \
+-p 8080:80 \
+voting-image
+```
+
+
+
 
 ## Database (MySQL)
 Create a database and table.
