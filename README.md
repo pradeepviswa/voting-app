@@ -29,3 +29,17 @@ CREATE TABLE votes (
     party VARCHAR(50)
 );
 ```
+
+## Page Description
+- Home Page (index.html)
+- Vote Processing Page (vote.php)
+- Results Page (results.php)
+- Basic Styling (style.css)
+
+## Process Flow
+1. User opens index.html
+2. Clicks a party button
+3. Form sends vote to vote.php
+4. vote.php saves vote in MySQL
+5. results.php counts votes
+
