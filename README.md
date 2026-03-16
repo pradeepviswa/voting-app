@@ -16,3 +16,16 @@
  ├── db.php
  └── style.css
 ```
+
+## Database (MySQL)
+Create a database and table.
+```
+CREATE DATABASE voting_db;
+
+USE voting_db;
+
+CREATE TABLE votes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    party VARCHAR(50)
+);
+```
