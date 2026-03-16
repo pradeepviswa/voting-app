@@ -59,18 +59,19 @@ voting-image
 ```
 
 
-
-
-## Database (MySQL)
-Create a database and table.
+## Database (MySQL) - Create Table
+### Enter MySQL container:
 ```
-CREATE DATABASE voting_db;
-
+docker exec -it voting-mysql mysql -u root -p
+# password is root
+```
+### Create a database and table.
+```
 USE voting_db;
 
 CREATE TABLE votes (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    party VARCHAR(50)
+id INT AUTO_INCREMENT PRIMARY KEY,
+party VARCHAR(50)
 );
 ```
 
