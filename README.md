@@ -164,7 +164,7 @@ CREATE TABLE votes (
 id INT AUTO_INCREMENT PRIMARY KEY,
 party VARCHAR(50)
 );
-
+```
 ## Scale the Web Service (Swarm advantage)
 ```
 docker service scale voting-web=3
@@ -175,4 +175,4 @@ docker service rm voting-web
 docker service rm voting-mysql
 ```
 
-```
+
